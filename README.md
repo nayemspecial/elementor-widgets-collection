@@ -48,6 +48,6 @@ Elementor Page Builder must be installed and active on your WordPress site.
 I am **Md. Nayemur Rahman**, a Passionate WordPress and Laravel Developer. Instructor, **ProjuktiPlus Academy**. I specialize in creating scalable web solutions and teaching modern development workflows.
 
 <!-- * **Portfolio:** [nayem.online](https://nayem.online) -->
-* **Facebook:** (https://www.facebook.com/nayemspecial)
-* **LinkedIn:**(https://www.linkedin.com/in/nayemspecial)
+* [**Facebook:**](https://www.facebook.com/nayemspecial)
+* [**LinkedIn:**](https://www.linkedin.com/in/nayemspecial)
 <!-- * **Agency:** [ProjuktiPlus](https://projuktiplus.com) -->
