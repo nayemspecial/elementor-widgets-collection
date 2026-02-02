@@ -4,7 +4,7 @@ A professional, lightweight and performance-optimized Elementor addon collection
 
 ## Features & Widgets
 
-| Widget Name | | Key Functionalities | Tech Stack |
+| Widget Name | Key Functionalities | Tech Stack |
 | :--- | :--- | :--- | :--- |
 | **PPA Team Member** | Slick Slider integration, Flip hover effects, Social icons. | PHP, JS, Slick |
 | **PPA Service Card** | Customizable icons, Dynamic typography, Hover animations. | PHP, CSS |
