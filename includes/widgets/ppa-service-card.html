@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPA Dark Service Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Container to simulate dark website without body tag */
+        .ppa-main-wrapper { background: #0b0e14; padding: 80px 20px; font-family: 'Segoe UI', Roboto, sans-serif; }
+
+        .ppa-section-header { text-align: center; margin-bottom: 50px; }
+        .ppa-section-header h2 { color: #fff; font-size: 36px; margin-bottom: 10px; }
+        .ppa-section-header p { color: #94a3b8; max-width: 600px; margin: 0 auto; }
+
+        /* Grid System */
+        .ppa-service-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        /* Card Design */
+        .ppa-service-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #4e4e4e;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .ppa-service-card:hover {
+            transform: translateY(-10px);
+            border: 1px solid #a4a4a4;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Card Image */
+        .ppa-card-thumb { height: 180px; overflow: hidden; position: relative; }
+        .ppa-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .ppa-service-card:hover .ppa-card-thumb img { transform: scale(1.1); }
+
+        /* Card Content */
+        .ppa-card-body { padding: 25px; text-align: left; }
+        .ppa-card-icon { 
+            width: 50px; height: 50px; background: #00d2ff; color: #0b0e14; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 12px; font-size: 20px; margin-bottom: 15px;
+            margin-top: -50px; position: relative; z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .ppa-card-title { color: #fff; font-size: 20px; margin-bottom: 10px; font-weight: 600; }
+        .ppa-card-desc { color: #94a3b8; font-size: 14px; line-height: 1.5; margin: 0; }
+
+    </style>
+</head>
+<body>
+
+    <div class="ppa-main-wrapper">
+        <div class="ppa-section-header">
+            <h2>Our Services</h2>
+            <p>ProjuktiPlus Academy offers the most demanding technical skills taught by Md. Nayemur Rahman.</p>
+        </div>
+
+        <div class="ppa-service-grid">
+            <div class="ppa-service-card">
+                <div class="ppa-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=600" alt="Web">
+                </div>
+                <div class="ppa-card-body">
+                    <div class="ppa-card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="ppa-card-title">Web Development</h3>
+                    <p class="ppa-card-desc">Master full-stack development with modern frameworks and best practices.</p>
+                </div>
+            </div>
+
+            <div class="ppa-service-card">
+                <div class="ppa-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?auto=format&fit=crop&w=600" alt="UIUX">
+                </div>
+                <div class="ppa-card-body">
+                    <div class="ppa-card-icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3 class="ppa-card-title">UI/UX Design</h3>
+                    <p class="ppa-card-desc">Create user-centric designs that are both functional and visually stunning.</p>
+                </div>
+            </div>
+
+            <div class="ppa-service-card">
+                <div class="ppa-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600" alt="Marketing">
+                </div>
+                <div class="ppa-card-body">
+                    <div class="ppa-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="ppa-card-title">Digital Marketing</h3>
+                    <p class="ppa-card-desc">Strategies to grow your business online and reach the right audience.</p>
+                </div>
+            </div>
+
+            <div class="ppa-service-card">
+                <div class="ppa-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600" alt="Cyber">
+                </div>
+                <div class="ppa-card-body">
+                    <div class="ppa-card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="ppa-card-title">Cyber Security</h3>
+                    <p class="ppa-card-desc">Learn to protect systems and networks from digital attacks and threats.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.ppa-service-card').hover(function() {
+                $(this).css('transition', 'all 0.4s ease');
+            });
+        });
+    </script>
+</body>
+</html>
