@@ -1,47 +1,40 @@
 <?php
-/**
- * Plugin Name: PPA Elementor Widgets Collection
- * Description: A professional collection of custom Elementor widgets for ProjuktiPlus Academy.
- * Version: 1.2.0
- * Author: Md. Nayemur Rahman
- * Author URI: https://nayem.online
- * Text Domain: ppa
- */
+/*
+Plugin Name: PPA Elementor Addons
+Description: Custom Elementor Widgets for ProjuktiPlus Academy.
+Plugin URI: wpplugin.projukriplus.com 
+Virsion: 1.0.0
+Autor: Md. Nayemur Rahman
+Author URI: admin.projuktiplus.com 
+Text Domin: ppa-addons
+*/
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+if( ! defined( 'ABSPATH' )){
+    exit;
 }
 
-/**
- * Register Widgets.
- */
-function ppa_register_widgets( $widgets_manager ) {
+function register_ppa_widgets( $widgets_manager ){
+    require_once( __DIR__ . '/widgets/blog-widget.php');
+    require_once( __DIR__ . '/widgets/team-member.php');
+    require_once( __DIR__ . '/widgets/slider-widget.php');
+    require_once( __DIR__ . '/widgets/call-to-action-widget.php');
 
-    // Include the Team Members widget file
-    require_once( __DIR__ . '/includes/widgets/team-members.php' );
-
-    // Register the widget instance
-    // Note: Ensure the class name inside team-members.php matches PPA_Team_Members_Widget
-    $widgets_manager->register( new \PPA_Team_Members_Widget() );
-
+    $widgets_manager->register( new \PPA_Blog_Widget() );
+    $widgets_manager->register( new \PPA_Team_Widget() );
+    $widgets_manager->register( new \PPA_Slider_Widget() );
+    $widgets_manager->register( new \PPA_CTA_Widget() );
 }
-add_action( 'elementor/widgets/register', 'ppa_register_widgets' );
+add_action('elementor/widgets/register', 'register_ppa_widgets');
 
-
-/**
- * Enqueue Styles and Scripts.
- */
-function ppa_enqueue_assets() {
+function ppa_addon_scripts(){
     
-    // Custom Styles
-    wp_enqueue_style( 'ppa-widgets-style', plugins_url( 'assets/css/style.css', __FILE__ ), array(), '1.2.0' );
 
-    // Slick Slider CSS & JS (Dependencies)
-    wp_enqueue_style( 'slick-slider', plugins_url( 'assets/css/slick.min.css', __FILE__ ), array(), '1.8.1' );
-    wp_enqueue_script( 'slick-slider', plugins_url( 'assets/js/slick.min.js', __FILE__ ), array( 'jquery' ), '1.8.1', true );
-
-    // Custom JavaScript
-    wp_enqueue_script( 'ppa-custom-script', plugins_url( 'assets/js/custom.js', __FILE__ ), array( 'jquery', 'slick-slider' ), '1.2.0', true );
+    wp_register_script('ppa-cta-script', plugins_url('assets/js/cta.js', __FILE__), ['jquery'], '1.0.0', true );
+    wp_register_script('ppa-slider-script', plugins_url('assets/js/main.js', __FILE__), ['jquery', 'slick-js'], '1.0.0', true );
+    
+    wp_enqueue_style('ppa-cta-style', plugins_url('assets/css/cta.css', __FILE__) );
+    wp_enqueue_style('ppa-blog-style', plugins_url('assets/css/style.css', __FILE__) );
+    wp_enqueue_script('ppa-slider-script', plugins_url('assets/js/main.js', __FILE__) );
 
 }
-add_action( 'wp_enqueue_scripts', 'ppa_enqueue_assets' );
+add_action('wp_enqueue_scripts', 'ppa_addon_scripts');
