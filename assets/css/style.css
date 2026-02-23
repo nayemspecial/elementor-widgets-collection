@@ -1,113 +1,383 @@
-/* Team Member CSS Start */
-.team-member-wrapper {
-    display: flex;
-    justify-content: space-between;
+/* * Project: Projukti Plus Academy
+    * Developer: Md. Nayemur Rahman
+    * Prefix: .ppa-
+    */
+
+/* বেসিক রিসেট (উইজেটের ভেতরে সাধারণত বডি ট্যাগ থাকে না, তাই কন্টেইনার ফোকাসড) */
+.ppa-blog-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* সেকশন ব্যাকগ্রাউন্ড */
 }
 
-.front {
-    box-shadow: 3px 3px 11px 3px #f3f3f3;
-}
-
-.front img {
-    width: 60%;
-    border-radius: 50% !important;
-    display: block;
+/* --- মেইন কন্টেইনার --- */
+.ppa-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 0;
 }
 
-.bg {
-    background-color: #000;
-}
-
-.meta {
-    color: #fff;
-    padding: 16px;
-    border-top: 6px solid green;
-}
-
-.hover{
-    background-color: #000;
-}
-
-.meta h2 {
-    font-size: 24px;
-    color: #fff;
-}
-
-.meta h2, .meta p {
-    margin: 0;
-    line-height: 1.4;
-}
-
-.envelope {
-    padding-top: 10px;
-}
-
-.envelope, .calender {
-    display: flex;
-    padding-bottom: 10px;
-}
-
-.envelpe-bg, .calender-bg {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: green;
-    margin-right: 10px;
-}
-
-.envelpe-bg i.far, .calender-bg i.far {
-    width: 14px;
-    height: 14px;
-    margin-left: 5px;
-    margin-top: 4px;
-}
-
-.single-team-member {
+.ppa-section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    font-size: 36px;
+    font-weight: 700;
     position: relative;
-    width: 265px;
-    margin: 0 8px ;
+    padding-bottom: 15px;
 }
 
-.hover {
+.ppa-section-title::after {
+    content: '';
     position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff; /* PPA ব্র্যান্ড কালার হিসেবে নীল রাখা হলো */
+    border-radius: 2px;
+}
+
+/* --- গ্রিড লেআউট (৪ কলাম) --- */
+.ppa-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ৪টি কলাম */
+    gap: 25px;
+}
+
+/* --- কার্ড ডিজাইন --- */
+.ppa-blog-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ppa-blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: transparent;
+}
+
+/* থাম্বনেইল এরিয়া */
+.ppa-card-thumb {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ppa-card-thumb img {
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.single-team-member:hover .hover {
-    opacity: 1;
-    visibility: visible;
+.ppa-blog-card:hover .ppa-card-thumb img {
+    transform: scale(1.1);
 }
 
+/* ব্যাজ/ক্যাটাগরি */
+.ppa-card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #007bff;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2;
+}
 
-ul.slick-dots {
+/* কন্টেন্ট এরিয়া */
+.ppa-card-content {
+    padding: 20px;
     display: flex;
-    justify-content: center;
-    list-style: none;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-ul.slick-dots li button {
-    display: none;
+.ppa-card-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-ul.slick-dots li {
-    width: 100px;
-    height: 7px;
-    background-color: #ddd;
-    margin-top: 40px;
+.ppa-card-title {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
-ul.slick-dots li.slick-active {
-    background-color: #333;
-    border-radius: 50px;
+.ppa-card-excerpt {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-/* End Team Member CSS */
+.ppa-card-footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-top: auto;
+}
 
+.ppa-read-more {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
 
+.ppa-read-more:hover {
+    gap: 8px;
+}
+
+/* --- রেসপন্সিভ ব্রেকপয়েন্ট --- */
+
+/* ট্যাবলেট (২ কলাম) */
+@media screen and (max-width: 991px) {
+    .ppa-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* মোবাইল (১ কলাম) */
+@media screen and (max-width: 576px) {
+    .ppa-blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .ppa-section-title {
+        font-size: 28px;
+    }
+}
+
+/*
+=======================*/
+
+        /* Hero Slider Style */
+        .hero-slider {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-item {
+            height: 100vh;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: #fff;
+        }
+
+        /* Overlay */
+        .slide-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* ডার্ক ওভারলে */
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            padding: 12px 30px;
+            background: #ff4757;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            background: #e84118;
+        }
+
+        /* Custom Arrows */
+        .slick-prev, .slick-next {
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+        }
+        .slick-prev { left: 20px; }
+        .slick-next { right: 20px; }
+
+/* --- CSS শুরু --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 60px 0;
+        }
+
+        .ppa-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .ppa-section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+            font-weight: 800;
+        }
+
+        /* --- গ্রিড লেআউট (৪ কলাম) --- */
+        .ppa-team-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        /* --- SINGLE CARD DESIGN (MODERN) --- */
+        .ppa-modern-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        /* হোভার করলে কার্ড একটু উপরে উঠবে */
+        .ppa-modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* ইমেজ এরিয়া */
+        .ppa-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px; /* ফিক্সড হাইট */
+        }
+
+        .ppa-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ছবি ক্রপ না হয়ে ফিট হবে */
+            transition: transform 0.5s ease;
+        }
+
+        /* হোভার করলে ইমেজ জুম হবে */
+        .ppa-modern-card:hover .ppa-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        /* --- সোশ্যাল ওভারলে (লুকানো থাকবে) --- */
+        .ppa-social-overlay {
+            position: absolute;
+            bottom: -50px; /* শুরুতে নিচে লুকানো */
+            left: 0;
+            width: 100%;
+            background: rgba(0, 123, 255, 0.9); /* নীল ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            transition: bottom 0.4s ease-in-out;
+        }
+
+        /* হোভার করলে সোশ্যাল ওভারলে উপরে আসবে */
+        .ppa-modern-card:hover .ppa-social-overlay {
+            bottom: 0;
+        }
+
+        .ppa-social-icon {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .ppa-social-icon:hover {
+            background: #fff;
+            color: #007bff;
+        }
+
+        /* কন্টেন্ট এরিয়া */
+        .ppa-card-content {
+            padding: 25px 15px;
+        }
+
+        .ppa-name {
+            margin: 0;
+            font-size: 20px;
+            color: #222;
+            font-weight: 700;
+        }
+
+        .ppa-designation {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #007bff; /* ব্র্যান্ড কালার */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* রেসপন্সিভ */
+        @media (max-width: 991px) {
+            .ppa-team-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .ppa-team-grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
