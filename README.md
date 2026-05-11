@@ -29,6 +29,7 @@ elementor-widgets-collection/
 │   └── widgets/
 │       ├── ppa-team-members.php
 │       └── ppa-service-card.php
+│       └── ppa-slider.php
 ├── ppa-elementor-addons.php  # Main Plugin Entry Point
 └── README.md
 
