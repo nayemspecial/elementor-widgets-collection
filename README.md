@@ -30,6 +30,8 @@ elementor-widgets-collection/
 │       ├── ppa-team-members.php
 │       └── ppa-service-card.php
 │       └── ppa-slider.php
+│       └── ppa-blog.php
+│       └── ppa-call-to-action.php
 ├── ppa-elementor-addons.php  # Main Plugin Entry Point
 └── README.md
 
