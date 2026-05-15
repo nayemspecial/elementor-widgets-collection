@@ -18,11 +18,13 @@ function register_ppa_widgets( $widgets_manager ){
     require_once( __DIR__ . '/widgets/team-member.php');
     require_once( __DIR__ . '/widgets/slider-widget.php');
     require_once( __DIR__ . '/widgets/call-to-action-widget.php');
+    require_once( __DIR__ . '/widgets/newsletter-widget.php');
 
     $widgets_manager->register( new \PPA_Blog_Widget() );
     $widgets_manager->register( new \PPA_Team_Widget() );
     $widgets_manager->register( new \PPA_Slider_Widget() );
     $widgets_manager->register( new \PPA_CTA_Widget() );
+    $widgets_manager->register( new \PPA_Newsletter_Widget() );
 }
 add_action('elementor/widgets/register', 'register_ppa_widgets');
 
@@ -34,6 +36,7 @@ function ppa_addon_scripts(){
     
     wp_enqueue_style('ppa-cta-style', plugins_url('assets/css/cta.css', __FILE__) );
     wp_enqueue_style('ppa-blog-style', plugins_url('assets/css/style.css', __FILE__) );
+    wp_enqueue_style('ppa-newsletter-style', plugins_url('assets/css/newsletter.css', __FILE__) );
     wp_enqueue_script('ppa-slider-script', plugins_url('assets/js/main.js', __FILE__) );
 
 }

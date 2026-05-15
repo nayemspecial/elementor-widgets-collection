@@ -1,0 +1,384 @@
+/* ====================================================
+   PPA Newsletter Subscriber Widget
+   Prefix: .ppa-nl-
+   ==================================================== */
+
+/* CSS Variables (overridable via Elementor color controls) */
+.ppa-newsletter-wrap {
+    --nl-accent : #4f8ef7;
+    --nl-bg1    : #0f1729;
+    --nl-bg2    : #1a2f5e;
+    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* -----------------------------------------------
+   WRAPPER  – three layout skins
+----------------------------------------------- */
+.ppa-newsletter-wrap {
+    position      : relative;
+    overflow      : hidden;
+    border-radius : 20px;
+    padding       : 60px 40px;
+    text-align    : center;
+}
+
+/* Skin: Gradient (dark) */
+.ppa-nl-gradient {
+    background    : linear-gradient(135deg, var(--nl-bg1) 0%, var(--nl-bg2) 100%);
+    box-shadow    : 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Skin: Light Card */
+.ppa-nl-light {
+    background : #ffffff;
+    border     : 1px solid #e2e8f0;
+    box-shadow : 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Skin: Minimal */
+.ppa-nl-minimal {
+    background    : transparent;
+    border        : 2px dashed #cbd5e0;
+    border-radius : 16px;
+}
+
+/* -----------------------------------------------
+   DECORATIVE BLOBS (gradient skin only)
+----------------------------------------------- */
+.ppa-nl-blob {
+    position      : absolute;
+    border-radius : 50%;
+    opacity       : 0.12;
+    pointer-events: none;
+}
+
+.ppa-nl-blob-1 {
+    width      : 320px;
+    height     : 320px;
+    background : var(--nl-accent);
+    top        : -80px;
+    right      : -80px;
+    filter     : blur(60px);
+}
+
+.ppa-nl-blob-2 {
+    width      : 200px;
+    height     : 200px;
+    background : #a78bfa;
+    bottom     : -60px;
+    left       : -60px;
+    filter     : blur(50px);
+}
+
+/* -----------------------------------------------
+   INNER CONTENT
+----------------------------------------------- */
+.ppa-nl-inner {
+    position   : relative;
+    z-index    : 1;
+    max-width  : 640px;
+    margin     : 0 auto;
+}
+
+/* -----------------------------------------------
+   BADGE
+----------------------------------------------- */
+.ppa-nl-badge {
+    display         : inline-block;
+    background      : rgba(79, 142, 247, 0.15);
+    color           : var(--nl-accent);
+    border          : 1px solid rgba(79, 142, 247, 0.3);
+    font-size       : 13px;
+    font-weight     : 600;
+    letter-spacing  : 0.5px;
+    padding         : 6px 16px;
+    border-radius   : 50px;
+    margin-bottom   : 18px;
+}
+
+.ppa-nl-light .ppa-nl-badge,
+.ppa-nl-minimal .ppa-nl-badge {
+    background : rgba(79, 142, 247, 0.08);
+    color      : var(--nl-accent);
+    border     : 1px solid rgba(79, 142, 247, 0.25);
+}
+
+/* -----------------------------------------------
+   TITLE
+----------------------------------------------- */
+.ppa-nl-title {
+    font-size     : 36px;
+    font-weight   : 800;
+    line-height   : 1.2;
+    margin        : 0 0 16px;
+    color         : #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.ppa-nl-light .ppa-nl-title,
+.ppa-nl-minimal .ppa-nl-title {
+    color : #1a202c;
+}
+
+/* -----------------------------------------------
+   DESCRIPTION
+----------------------------------------------- */
+.ppa-nl-desc {
+    font-size     : 16px;
+    line-height   : 1.7;
+    color         : #a0aec0;
+    margin        : 0 0 32px;
+    max-width     : 520px;
+    margin-left   : auto;
+    margin-right  : auto;
+}
+
+.ppa-nl-light .ppa-nl-desc,
+.ppa-nl-minimal .ppa-nl-desc {
+    color : #718096;
+}
+
+/* -----------------------------------------------
+   FORM — INPUT GROUP
+----------------------------------------------- */
+.ppa-nl-form {
+    margin-bottom : 14px;
+}
+
+.ppa-nl-input-group {
+    display       : flex;
+    align-items   : center;
+    background    : rgba(255, 255, 255, 0.07);
+    border        : 1px solid rgba(255, 255, 255, 0.15);
+    border-radius : 12px;
+    padding       : 6px 6px 6px 16px;
+    gap           : 8px;
+    transition    : border-color 0.2s, box-shadow 0.2s;
+}
+
+.ppa-nl-input-group:focus-within {
+    border-color : var(--nl-accent);
+    box-shadow   : 0 0 0 3px rgba(79, 142, 247, 0.2);
+}
+
+/* Light / minimal skins */
+.ppa-nl-light .ppa-nl-input-group,
+.ppa-nl-minimal .ppa-nl-input-group {
+    background : #f7fafc;
+    border     : 1px solid #e2e8f0;
+}
+
+/* Email icon */
+.ppa-nl-input-icon {
+    color       : #718096;
+    flex-shrink : 0;
+    display     : flex;
+    align-items : center;
+}
+
+.ppa-nl-gradient .ppa-nl-input-icon {
+    color : rgba(255, 255, 255, 0.45);
+}
+
+/* Input field */
+.ppa-nl-input {
+    flex        : 1;
+    background  : transparent !important;
+    border      : none !important;
+    outline     : none !important;
+    box-shadow  : none !important;
+    font-size   : 15px;
+    color       : #1a202c;
+    padding     : 10px 0;
+    min-width   : 0;
+}
+
+.ppa-nl-gradient .ppa-nl-input {
+    color : #ffffff;
+}
+
+.ppa-nl-input::placeholder {
+    color : #718096;
+}
+
+.ppa-nl-gradient .ppa-nl-input::placeholder {
+    color : rgba(255, 255, 255, 0.4);
+}
+
+/* -----------------------------------------------
+   BUTTON
+----------------------------------------------- */
+.ppa-nl-btn {
+    display         : inline-flex;
+    align-items     : center;
+    gap             : 8px;
+    background      : var(--nl-accent);
+    color           : #ffffff;
+    border          : none;
+    border-radius   : 10px;
+    padding         : 12px 22px;
+    font-size       : 14px;
+    font-weight     : 700;
+    cursor          : pointer;
+    white-space     : nowrap;
+    flex-shrink     : 0;
+    transition      : background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow      : 0 4px 14px rgba(79, 142, 247, 0.4);
+}
+
+.ppa-nl-btn:hover {
+    background : #3a7de8;
+    transform  : translateY(-1px);
+    box-shadow : 0 6px 20px rgba(79, 142, 247, 0.55);
+}
+
+.ppa-nl-btn:active {
+    transform : translateY(0);
+}
+
+.ppa-nl-btn-icon {
+    display     : flex;
+    align-items : center;
+    transition  : transform 0.2s;
+}
+
+.ppa-nl-btn:hover .ppa-nl-btn-icon {
+    transform : translateX(3px);
+}
+
+/* -----------------------------------------------
+   SUCCESS MESSAGE
+----------------------------------------------- */
+.ppa-nl-success {
+    background    : rgba(72, 187, 120, 0.12);
+    border        : 1px solid rgba(72, 187, 120, 0.4);
+    color         : #48bb78;
+    border-radius : 10px;
+    padding       : 14px 20px;
+    font-size     : 15px;
+    font-weight   : 600;
+    text-align    : center;
+    margin-top    : 4px;
+}
+
+.ppa-nl-light .ppa-nl-success,
+.ppa-nl-minimal .ppa-nl-success {
+    color : #276749;
+}
+
+/* -----------------------------------------------
+   PRIVACY NOTE
+----------------------------------------------- */
+.ppa-nl-privacy {
+    font-size : 12px;
+    color     : rgba(255, 255, 255, 0.35);
+    margin    : 12px 0 0;
+}
+
+.ppa-nl-light .ppa-nl-privacy,
+.ppa-nl-minimal .ppa-nl-privacy {
+    color : #a0aec0;
+}
+
+/* -----------------------------------------------
+   STATS BAR
+----------------------------------------------- */
+.ppa-nl-stats {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    gap             : 0;
+    margin-top      : 36px;
+    padding-top     : 28px;
+    border-top      : 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap       : wrap;
+}
+
+.ppa-nl-light .ppa-nl-stats,
+.ppa-nl-minimal .ppa-nl-stats {
+    border-top-color : #e2e8f0;
+}
+
+.ppa-nl-stat {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    padding        : 0 32px;
+    gap            : 4px;
+}
+
+.ppa-nl-stat strong {
+    font-size   : 22px;
+    font-weight : 800;
+    color       : #ffffff;
+    line-height : 1;
+}
+
+.ppa-nl-light .ppa-nl-stat strong,
+.ppa-nl-minimal .ppa-nl-stat strong {
+    color : #1a202c;
+}
+
+.ppa-nl-stat span {
+    font-size : 12px;
+    color     : rgba(255, 255, 255, 0.45);
+}
+
+.ppa-nl-light .ppa-nl-stat span,
+.ppa-nl-minimal .ppa-nl-stat span {
+    color : #718096;
+}
+
+.ppa-nl-stat-divider {
+    width      : 1px;
+    height     : 40px;
+    background : rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.ppa-nl-light .ppa-nl-stat-divider,
+.ppa-nl-minimal .ppa-nl-stat-divider {
+    background : #e2e8f0;
+}
+
+/* -----------------------------------------------
+   RESPONSIVE
+----------------------------------------------- */
+@media (max-width: 600px) {
+    .ppa-newsletter-wrap {
+        padding       : 40px 20px;
+        border-radius : 14px;
+    }
+
+    .ppa-nl-title {
+        font-size : 26px;
+    }
+
+    .ppa-nl-input-group {
+        flex-direction : column;
+        align-items    : stretch;
+        padding        : 10px;
+        gap            : 10px;
+    }
+
+    .ppa-nl-input-icon {
+        display : none;
+    }
+
+    .ppa-nl-input {
+        padding : 10px 12px;
+    }
+
+    .ppa-nl-btn {
+        width           : 100%;
+        justify-content : center;
+    }
+
+    .ppa-nl-stat {
+        padding : 0 16px;
+    }
+
+    .ppa-nl-stat strong {
+        font-size : 18px;
+    }
+}
