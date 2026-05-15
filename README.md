@@ -33,6 +33,7 @@ elementor-widgets-collection/
 │       └── ppa-blog.php
 │       └── ppa-call-to-action.php
 │       └── ppa-pricing-table.php
+│       └── ppa-newsletter.php
 ├── ppa-elementor-addons.php  # Main Plugin Entry Point
 └── README.md
 
