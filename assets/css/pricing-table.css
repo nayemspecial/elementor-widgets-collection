@@ -1,0 +1,204 @@
+/**
+ * PPA Pricing Table — Stylesheet
+ *
+ * Prefix  : .ppa-pt-
+ * Version : 1.1.0
+ */
+
+/* ─────────────────────────────────────────────
+   Card
+───────────────────────────────────────────── */
+.ppa-pt-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px 28px 32px;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ppa-pt-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* Highlighted variant */
+.ppa-pt-card.highlighted {
+    border-color: #4f46e5;
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.18);
+}
+
+/* ─────────────────────────────────────────────
+   Badge
+───────────────────────────────────────────── */
+.ppa-pt-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────
+   Header
+───────────────────────────────────────────── */
+.ppa-pt-header {
+    margin-bottom: 24px;
+}
+
+.ppa-pt-plan-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4f46e5;
+    margin: 0 0 6px;
+    line-height: 1.2;
+}
+
+.ppa-pt-tagline {
+    font-size: 13px;
+    color: #9ca3af;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────
+   Price
+───────────────────────────────────────────── */
+.ppa-pt-price-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.ppa-pt-currency {
+    font-size: 22px;
+    font-weight: 700;
+    color: #374151;
+    margin-top: 6px;
+    line-height: 1;
+}
+
+.ppa-pt-price-amount {
+    font-size: 52px;
+    font-weight: 800;
+    color: #4f46e5;
+    line-height: 1;
+}
+
+.ppa-pt-period {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-top: 10px;
+    align-self: flex-end;
+    line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────────
+   Features List
+───────────────────────────────────────────── */
+.ppa-pt-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.ppa-pt-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ppa-pt-feature-item.included {
+    color: #374151;
+}
+
+.ppa-pt-feature-item.excluded {
+    color: #9ca3af;
+    text-decoration: line-through;
+    text-decoration-color: #d1d5db;
+}
+
+.ppa-pt-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ppa-pt-check {
+    color: #4f46e5;
+}
+
+.ppa-pt-cross {
+    color: #d1d5db;
+}
+
+/* ─────────────────────────────────────────────
+   Button
+───────────────────────────────────────────── */
+.ppa-pt-btn-wrap {
+    margin-top: auto;
+}
+
+.ppa-pt-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #4f46e5;
+    box-sizing: border-box;
+}
+
+.ppa-pt-btn--solid {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.ppa-pt-btn--solid:hover {
+    background: #4338ca;
+    border-color: #4338ca;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+}
+
+.ppa-pt-btn--outline {
+    background: transparent;
+    color: #4f46e5;
+}
+
+.ppa-pt-btn--outline:hover {
+    background: #4f46e5;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
