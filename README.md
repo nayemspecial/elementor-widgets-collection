@@ -74,7 +74,7 @@ elementor-widgets-collection/
 
 1. **Download** — Clone this repository or download as a `.zip` file
    ```bash
-   git clone https://github.com/your-username/elementor-widgets-collection.git
+   git clone https://github.com/nayemspecial/Elementor-Widgets-Collection.git
    ```
 2. **Upload** — Go to `WordPress Dashboard → Plugins → Add New → Upload Plugin`, then select the `.zip` file
 3. **Activate** — Click **Activate Plugin**
