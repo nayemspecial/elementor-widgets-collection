@@ -2,11 +2,11 @@
 
 A professional, lightweight, and performance-optimized custom Elementor addon plugin — built for the **ProjuktiPlus Academy** community to demonstrate real-world WordPress and Elementor widget development.
 
-> 🔌 Developed by **Md. Nayemur Rahman** | Instructor, ProjuktiPlus Academy
+>  Developed by **Md. Nayemur Rahman** | Instructor, ProjuktiPlus Academy
 
 ---
 
-## ✨ Features at a Glance
+##  Features at a Glance
 
 - 7 custom Elementor widgets, all prefixed with `PPA_` for zero conflicts
 - Assets enqueued **only when widgets are active** — no bloat
@@ -16,7 +16,7 @@ A professional, lightweight, and performance-optimized custom Elementor addon pl
 
 ---
 
-## 🧩 Widgets Included
+##  Widgets Included
 
 | Widget | Description |
 |---|---|
@@ -30,7 +30,7 @@ A professional, lightweight, and performance-optimized custom Elementor addon pl
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 elementor-widgets-collection/
@@ -63,7 +63,7 @@ elementor-widgets-collection/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### Requirements
 - WordPress **5.0+**
@@ -82,7 +82,7 @@ elementor-widgets-collection/
 
 ---
 
-## 🛡️ Technical Highlights
+##  Technical Highlights
 
 **Security**
 All dynamic output is properly sanitized using WordPress escaping functions — `esc_html()`, `esc_attr()`, and `esc_url()` — preventing XSS vulnerabilities.
@@ -98,7 +98,7 @@ Uses up-to-date Elementor APIs including `Icons_Manager` for SVG icon support an
 
 ---
 
-## 👨‍💻 About the Author
+##  About the Author
 
 **Md. Nayemur Rahman**
 WordPress & Laravel Developer | Instructor at ProjuktiPlus Academy
@@ -110,7 +110,7 @@ Specializes in building scalable web solutions and teaching modern development w
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **GPL-2.0 License** — see the [LICENSE](LICENSE) file for full details.
 
